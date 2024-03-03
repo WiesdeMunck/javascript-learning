@@ -8,9 +8,14 @@ export default function GsapAnimation() {
 
 		gsap.to('.js-gsap-animation__ball', {
 			y: 400,
-			duration: 0.75,
+
 			// Option 1
+			duration: 0.75,
 			ease: "Power2.easeIn",
+			// option 2
+			// duration: 1.75,
+			// ease: "Bounce.easeOut",
+			//
 			yoyo: true,
 			repeat: -1,
 			transformOrigin: "center center",
