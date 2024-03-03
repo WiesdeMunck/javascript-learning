@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+
+.gsap-animation {
+
+	&__ball {
+		width: 400px;
+		aspect-ratio: 1/1;
+		display: block;
+	}
+}
+
+.js-gsap__ball {
+
+}
