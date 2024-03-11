@@ -16,7 +16,38 @@ export default function AosAnimation() {
 					<h1>Hello, world!</h1>
 					<img src="/img/kitten1.png" alt="" />
 				</div>
-
+			</div>
+			<div className="aos-animation">
+				<div data-aos="fade-down" data-aos-anchor-placement="center-bottom">
+					<h1>Hello, world!</h1>
+					<img src="/img/kitten2.png" alt="" />
+				</div>
+			</div>
+			<div className="aos-animation">
+				<div data-aos="zoom-in" data-aos-anchor-placement="center-bottom">
+					<h1>Hello, world!</h1>
+					<img src="/img/kitten3.png" alt="" />
+				</div>
+			</div>
+			<div className="aos-animation">
+				<div
+					data-aos="zoom-out-up"
+					data-aos-anchor-placement="center-bottom"
+				>
+					<h1>Hello, world!</h1>
+					<img src="/img/kitten3.png" alt="" />
+				</div>
+			</div>
+			<div className="aos-animation">
+				<div
+					data-aos="fade-left"
+					data-aos-anchor="#example-anchor"
+					data-aos-offset="500"
+					data-aos-duration="500"
+				>
+					<h1>Hello, world!</h1>
+					<img src="/img/kitten4.png" alt="" />
+				</div>
 			</div>
 		</section>
 	);
