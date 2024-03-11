@@ -10,9 +10,16 @@ export default function SwiperAnimation() {
 			<Swiper
 				className="swiper-animation"
 				spaceBetween={50}
-				slidesPerView={2}
+				slidesPerView={1}
 				onSlideChange={() => console.log('slide change')}
 				onSwiper={(swiper) => console.log(swiper)}
+				breakpoints={{
+					// when window width is >= 640px
+					769: {
+					  slidesPerView: 2,
+					  spaceBetween: 20,
+					},
+				 }}
 			>
 				<SwiperSlide className="swiper-animation__content-wrapper">
 					<a href="/">
