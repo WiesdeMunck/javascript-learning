@@ -6,10 +6,12 @@
 // blocks
 // @use 'blocks/_tmp';
 @use 'blocks/_gsap-animation';
+@use 'blocks/_swiper-animation';
 
 // global
 @use 'global/_reset';
 @use 'global/_root';
+@use 'global/_base';
 @use 'global/_typography';
 @use 'global/_fonts';
 
