@@ -15,7 +15,7 @@ export default function SwiperAnimation() {
 				onSwiper={(swiper) => console.log(swiper)}
 				breakpoints={{
 					// when window width is >= 640px
-					769: {
+					900: {
 					  slidesPerView: 2,
 					  spaceBetween: 20,
 					},
