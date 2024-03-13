@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+
+.navigation-takeover{
+	position: fixed;
+	inset: 0;
+	height: 100svh;
+	width: 100svw;
+	z-index: 98;
+	display: grid;
+	place-items: center;
+
+
+&__list{
+	border: white 1px solid;
+	padding: 4rem 6rem;
+	display: grid;
+	gap: 1rem;
+}
+&__item{
+	list-style-type: none;
+	width: 100%;
+	padding: 0.5rem 1.5rem;
+	border-radius: 10px;
+	cursor: pointer;
+
+	&:hover{
+		background: red;
+	}
+
+}
+&__link{
+ color: currentColor;
+
+}
+}

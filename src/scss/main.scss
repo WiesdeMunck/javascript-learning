@@ -8,13 +8,16 @@
 @use 'blocks/_gsap-animation';
 @use 'blocks/_swiper-animation';
 @use 'blocks/_aos-animation';
+@use 'blocks/_navigation-takeover';
 @use 'blocks/_svg-animation';
+@use 'blocks/_navigation-hamburger';
 
 // global
 @use 'global/_reset';
 @use 'global/_root';
 @use 'global/_base';
 @use 'global/_typography';
+@use 'global/_utilities';
 @use 'global/_fonts';
 
 // layout

@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+
+.navigation-hamburger {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: block;
+	background: transparent;
+	border: none;
+	opacity: 0.3;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+	padding: 1rem;
+	z-index: 99;
+
+	&:hover {
+		opacity: 1;
+	}
+
+
+
+
+
+	&__svg rect {
+		fill: orangered !important;
+	}
+
+
+}
+
+
+dialog::backdrop {
+	background: red;
+ }
