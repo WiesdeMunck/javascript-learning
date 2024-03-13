@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+
+
+.animated-circle {
+	animation: slide 4s linear infinite;
+}
+
+@keyframes slide {
+	from {
+		 transform: translateX(0);
+	}
+	to {
+		 transform: translateX(300px);
+	}
+}
+
+.svg-animation__sleigh {
+	// follow whats inside the <path str <path stroke="#E0CEB9" stroke-width="4" d="M-200 80 L -80 80 Q 80 80 70 -10 A 70 70 0 0 0 -70 -10 Q -80 80 80 80 L 200 80"/>>
+	// You can follow the path insdie d=""
+	offset-path: path(
+	  "M-200 80 L -90 80 Q 60 80 60 -10 A 50 50 0 0 0 -60 -10 Q -60 80 90 80 L 200 80"
+	);
+	animation: roller-coaster 6000ms infinite linear;
+ }
+
+ .svg-animation__tree {
+
+	transform: translate(-0%, -85%);
+	// follow whats inside the <path str <path stroke="#E0CEB9" stroke-width="4" d="M-200 80 L -80 80 Q 80 80 70 -10 A 70 70 0 0 0 -70 -10 Q -80 80 80 80 L 200 80"/>>
+	// You can follow the path insdie d=""
+	offset-path: path(
+	  "M-200 80 L -90 80 Q 60 80 60 -10 A 50 50 0 0 0 -60 -10 Q -60 80 90 80 L 200 80"
+	);
+	animation: roller-coaster 6000ms infinite linear 3000ms;
+ }
+
+ @keyframes roller-coaster {
+	0% {
+	  offset-distance: 0%;
+	}
+	100% {
+	  offset-distance: 100%;
+	}
+ }
+
