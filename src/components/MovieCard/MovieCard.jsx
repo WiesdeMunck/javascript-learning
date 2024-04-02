@@ -5,10 +5,53 @@ export default function MovieCard() {
 	const [selectedSeats, setSelectedSeats] = useState([]);
 	const [selectedSeatsCount, setSelectedSeatsCount] = useState(0);
 
+	const handleSeatSelection = (rowIndex, collumnIndex, benchIndex) => {
+		// on click add active class to the clicked seat
+		const clickedSeat =
+		  document.getElementById(
+			 `movie-card__${rowIndex}-${collumnIndex}-${benchIndex}`
+		  );
+		const clickedSeatId = `movie-card__${rowIndex}-${collumnIndex}-${benchIndex}`;
+		clickedSeat.classList.toggle(
+		  'movie-card__content-bench-active'
+		);
+		if (
+		  clickedSeat.classList.contains(
+			 'movie-card__content-bench-active'
+		  )
+		) {
+		  setSelectedSeatsCount(
+			 (prevSelectedSeatsCount) =>
+				prevSelectedSeatsCount + 1
+		  );
+		  setSelectedSeats(
+			 (prevSetSelectedSeats) => [
+				...prevSetSelectedSeats,
+				clickedSeatId,
+			 ]
+		  );
+		} else {
+		  setSelectedSeatsCount(
+			 (prevSelectedSeatsCount) =>
+				prevSelectedSeatsCount - 1
+		  );
+		  // remove the seat from the selected seats array by checking the id
+		  setSelectedSeats(
+			 (prevSetSelectedSeats) =>
+				prevSetSelectedSeats.filter(
+				  (item) =>
+					 item !==
+					 clickedSeatId
+				)
+		  );
+		}
+	 };
+
+
 	return (
 		<section key={1} className="grid-item --center-grid-item ">
 			<div className="movie-card">
-				{/* Section 1 */}
+				{/* Section 1 img section */}
 				<div className="movie-card__img-wrapper">
 					<svg
 						className="movie-card__img-svg-arrow"
@@ -32,82 +75,107 @@ export default function MovieCard() {
 						</span>
 					</div>
 				</div>
-				{/* Section 2 */}
-				<div className="movie-card__content-wrapper">
-					<div></div>
 
-					{[...Array(7)].map((rowA, rowIndex) => {
-						return (
-							<div key={rowIndex} className="movie-card__content-bench-row">
-								{/* These are the collumns */}
-								{[...Array(2)].map((collumnA, collumnIndex) => {
-									return (
-										<div key={collumnIndex} className="movie-card__content-bench-collumn">
-											{/* There are the ammount of benches in each collumn */}
-											{[...Array(4)].map((benchA, benchIndex) => {
-												return (
-													<svg
-														key={benchIndex}
-														onClick={() => {
-															// on click add active class to the clicked seat
-															const clickedSeat =
-																document.getElementById(
-																	`movie-card__${rowIndex}-${collumnIndex}-${benchIndex}`
-																);
-															const clickedSeatId = `movie-card__${rowIndex}-${collumnIndex}-${benchIndex}`;
-															clickedSeat.classList.toggle(
-																'movie-card__content-bench-active'
-															);
-															if (
-																clickedSeat.classList.contains(
-																	'movie-card__content-bench-active'
-																)
-															) {
-																setSelectedSeatsCount(
-																	(prevSelectedSeatsCount) =>
-																		prevSelectedSeatsCount + 1
-																);
-																setSelectedSeats(
-																	(prevSetSelectedSeats) => [
-																		...prevSetSelectedSeats,
-																		clickedSeatId,
-																	]
-																);
-															} else {
-																setSelectedSeatsCount(
-																	(prevSelectedSeatsCount) =>
-																		prevSelectedSeatsCount - 1
-																);
-																// remove the seat from the selected seats array by checking the id
-																setSelectedSeats(
-																	(prevSetSelectedSeats) =>
-																		prevSetSelectedSeats.filter(
-																			(item) =>
-																				item !==
-																				clickedSeatId
-																		)
-																);
-															}
-														}}
-														id={`movie-card__${rowIndex}-${collumnIndex}-${benchIndex}`}
-														className="movie-card__content-bench-item"
-														xmlns="http://www.w3.org/2000/svg"
-														viewBox="0 0 640 512"
-													>
-														<path d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
-													</svg>
-												);
-											})}
-										</div>
-									);
-								})}
-							</div>
-						);
-					})}
+				{/* Section 2 brench grid section */}
+				<div className="movie-card__content-wrapper">
+					<div className="movie-card__content-options-wrapper">
+						<span className="movie-card__content-option">
+						<svg
+							className="movie-card__content-option-svg movie-card__content-option-svg--available"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 640 512"
+						>
+							<path d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+						</svg>
+						Available
+						</span>
+						<span className="movie-card__content-option">
+						<svg
+							className="movie-card__content-option-svg movie-card__content-option-svg--booked"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 640 512"
+						>
+							<path d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+						</svg>
+						Booked
+						</span>
+						<span className="movie-card__content-option">
+						<svg
+							className="movie-card__content-option-svg movie-card__content-option-svg--selected"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 640 512"
+						>
+							<path d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+						</svg>
+						Selected
+						</span>
+
+					</div>
+
+
+					<div className='movie-card__content-bench-grid'>
+
+						{[...Array(7)].map((rowA, rowIndex) => {
+							return (
+								<div key={rowIndex} className="movie-card__content-bench-row">
+									{/* Charcode creates the letters of the alphabet */}
+									<span className='movie-card__content-bench-row-letter' >{String.fromCharCode(97 + rowIndex)}</span>
+									{/* These are the collumns */}
+									{[...Array(2)].map((collumnA, collumnIndex) => {
+										return (
+											<div key={collumnIndex} className="movie-card__content-bench-collumn">
+												{/* There are the ammount of benches in each collumn */}
+
+												{[...Array(4)].map((benchA, benchIndex) => {
+													return (
+
+														<svg
+															tabIndex={0}
+															key={benchIndex}
+															onClick={() => handleSeatSelection(rowIndex, collumnIndex, benchIndex)}
+															onKeyDown={(e) => {
+																if (e.key === 'Enter') {
+																	return handleSeatSelection(rowIndex, collumnIndex, benchIndex);
+																}
+															}}
+															id={`movie-card__${rowIndex}-${collumnIndex}-${benchIndex}`}
+															className="movie-card__content-bench-item"
+															xmlns="http://www.w3.org/2000/svg"
+															viewBox="0 0 640 512"
+														>
+															<path d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z" />
+														</svg>
+
+													);
+												})}
+											</div>
+										);
+									})}
+								</div>
+							);
+						})}
+					</div>
+
+					<div className="movie-card__content-screen-wrapper">
+						<span className='div.movie-card__content-screen-title'>screen</span>
+						<div className="div movie-card__content-screen"></div>
+					</div>
 				</div>
 
-				{/* Section 3 */}
-				<div className="movie-card__cta-wrapper"></div>
+				{/* Section 3 cta section*/}
+				<div className="movie-card__cta-wrapper">
+					<ul className="movie-card__cta-label-list">
+						<li className="movie-card__cta-label">Date</li>
+						<li className="movie-card__cta-label">Tickets</li>
+						<li className="movie-card__cta-label movie-card__cta-label--total ">Total</li>
+					</ul>
+					<ul className="movie-card__cta-content-list">
+						<li className="movie-card__cta-content-item">Jul 11, 11:35</li>
+						<li className="movie-card__cta-content-item">3</li>
+						<li className="movie-card__cta-content-item">€31</li>
+					</ul>
+					<button className="movie-card__cta-button">Next</button>
+				</div>
 			</div>
 			<button
 					onClick={() => {
