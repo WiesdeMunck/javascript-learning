@@ -21,3 +21,10 @@
 		margin: 0 auto;
 	}
 }
+
+.--center-grid-item {
+	min-height: 100svh;
+	min-width: 100svw;
+	justify-content: center;
+	place-items: center;
+}

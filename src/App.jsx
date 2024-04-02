@@ -9,6 +9,7 @@ import AosAnimation from './components/AosAnimation/AosAnimation';
 import SvgAnimation from './components/SvgAnimation/SvgAnimation';
 import SwiperAnimation from './components/SwiperAnimation/SwiperAnimation';
 import NumberOne from './components/NumberOne';
+import MovieCard from './components/MovieCard/MovieCard';
 
 
 
@@ -20,6 +21,7 @@ function App() {
 		<Navigation />
 				<Routes>
 					<Route path="/" element={<HomePage />} />
+					<Route path="/move-card" element={<MovieCard />} />
 					<Route path="/gsap-animation" element={<GsapAnimation />} />
 					<Route path="/aos-animation" element={<AosAnimation />} />
 					<Route path="/svg-animation" element={<SvgAnimation />} />
