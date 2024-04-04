@@ -227,5 +227,13 @@ body:has(.movie-card) {
 		margin-right: 1rem;
 		border-radius: 16px;
 		border: none;
+		cursor: pointer;
+		background: #00000080;
+		transition: background ease 0.3s;
+
+		&:hover{
+			background: #000000;
+		}
+
 	}
 }
