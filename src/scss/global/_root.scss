@@ -5,9 +5,16 @@
 	//// colors
 	// neutrals
 	//// 100 is always white
-	--clr-neutral--100: #ffffff; // white
+	--clr-neutral--100: #fff; // white
+	--clr-neutral--200: #EEE; // Grey
+	--clr-neutral--300: #CCC; // Grey
+	--clr-neutral--400: #AAA; // Grey
+	--clr-neutral--500: #888; // Grey
+	--clr-neutral--600: #666; // Grey
+	--clr-neutral--700: #444; // Grey
+	--clr-neutral--800: #222; // Grey
 	//// 900 is always black
-	--clr-neutral--900: #000000; // black
+	--clr-neutral--900: #000; // black
 
 	// brand colors
 	--clr-primary--400: #ff0000; // red

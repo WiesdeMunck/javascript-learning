@@ -68,7 +68,7 @@ export default function MovieCard() {
 					</svg>
 					<img className="movie-card__img" src="/img/kitten1.png" alt="" />
 					<div className="movie-card__img-content-wrapper">
-						<h3 className="movie-card__img-title">Lorem, ipsum.</h3>
+						<h3 className="movie-card__img-title">The return of the kitty</h3>
 						<span className="movie-card__img-subtitle">
 							<svg
 								className="movie-card__img-svg-location"
@@ -77,7 +77,7 @@ export default function MovieCard() {
 							>
 								<path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
 							</svg>
-							Lorem, ipsum dolor.
+							Part_7_final_4_FINAL_2(The last one)
 						</span>
 					</div>
 				</div>

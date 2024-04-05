@@ -8,10 +8,10 @@ section:has(.movie-card) {
 	border-radius: 12px;
 	overflow: hidden;
 	box-shadow: rgba(149, 157, 165, 0.2) 0rem 0.5rem 1.5rem;
-	background: #fff;
-	// Because the origina border color is red and we want to change it to black
-	color: #000;
-	// max-width: 31.25rem;
+	background: var(--clr-neutral--100);
+	// Because the origina border root color is red and we want to change it to black
+	color: var(--clr-neutral--900);
+	max-width: 31.25rem;
 
 	&__img-wrapper {
 		z-index: 1;
@@ -36,12 +36,18 @@ section:has(.movie-card) {
 	}
 
 	&__img-svg-arrow {
+		filter: drop-shadow(0px 0px 12px #000);
 		cursor: pointer;
 		position: absolute;
 		height: 2.25rem;
 		fill: var(--clr-neutral--100);
 		left: 1rem;
 		top: 0.6rem;
+
+		&:hover {
+			fill: var(--clr-neutral--200);
+		}
+
 	}
 
 	&__img {
@@ -126,7 +132,7 @@ section:has(.movie-card) {
 	}
 
 	&__content-option-svg--booked {
-		fill: #00000050;
+		fill: var(--clr-neutral--500);
 	}
 
 	&__content-option-svg--selected {
@@ -172,7 +178,7 @@ section:has(.movie-card) {
 		display: grid;
 		position: relative;
 		place-content: center;
-		padding: 0.5rem 1rem 2rem 1rem;
+		padding: 1rem 1rem 2rem 1rem;
 	}
 	&__content-screen-title {
 		//  text-align: center;
@@ -180,8 +186,8 @@ section:has(.movie-card) {
 	}
 
 	&__content-screen {
-		border: solid 0.3125rem #000;
-		border-color: #000 transparent transparent transparent;
+		border: solid 0.3125rem var(--clr-neutral--900);
+		border-color: var(--clr-neutral--900) transparent transparent transparent;
 		border-radius: 100% 100% 0 0;
 		border-width: 0.375rem;
 		height: 3.25rem;
@@ -195,16 +201,16 @@ section:has(.movie-card) {
 	// Section 3 cta section
 
 	&__cta-wrapper{
-		color: #fff;
+		color: var(--clr-neutral--100);
 		display: grid;
 		grid-template-columns: auto auto 1fr;
 
-		background: #00000080;
+		background: var(--clr-neutral--500);
 	}
 	&__cta-label-list{
 		list-style: none;
 		padding: 1rem;
-		background: #00000050;
+		background: var(--clr-neutral--700);
 
 	}
 	&__cta-label{
@@ -231,9 +237,8 @@ section:has(.movie-card) {
 		border-radius: 1rem;
 		border: none;
 		cursor: pointer;
-		background: #00000080;
 		transition: background ease 0.3s;
-		background: #00000050;
+		background: var(--clr-neutral--700);
 
 		&:hover{
 			background: #000000;

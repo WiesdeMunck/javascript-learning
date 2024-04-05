@@ -10,8 +10,8 @@ export default function Navigation() {
 			url: '/',
 		},
 		{
-			name: 'MovieCardPage',
-			url: '/movie-card-page'
+			name: 'Movie Card',
+			url: '/movie-card'
 		},
 		{
 			name: 'Aos Animation',
