@@ -212,9 +212,10 @@ export default function MovieCard() {
 				onClick={() => {
 					console.log('selected seats ', selectedSeats);
 					console.log('selected seats count ', selectedSeatsCount);
+					console.log('total price ', price);
 				}}
 			>
-				Log data
+				Log current data
 			</button>
 		</section>
 	);
