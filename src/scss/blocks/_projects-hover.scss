@@ -1,0 +1,94 @@
+@use '../abstracts' as *;
+
+.projects-hover{
+
+
+&__item{
+	// This is wrong
+	$self: &;
+	border: 2px #000 solid;
+	padding:3rem 3rem 3rem 3rem;
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	transition: all ease 0.3s;
+
+	&:hover {
+		padding:3rem 3rem 3rem 3rem;
+	}
+
+	&:hover .projects-hover__item-img-wrapper{
+		transform: scale(1.1);
+		// transform: translateY(-2rem);
+	}
+
+	&:hover .projects-hover__titles-wrapper > *{
+		transform: translateY(-100%);
+	}
+
+	&:hover .projects-hover__img-titles-wrapper > * {
+		transform: translateY(0%);
+	}
+}
+&__article{
+
+}
+
+&__titles-wrapper {
+
+	overflow: hidden;
+
+	& > * {
+		transition: all ease .3s;
+	}
+}
+
+
+&__item-title{
+
+}
+&__item-subtitle{
+	font-size: var(--fs-800);
+	display: block;
+}
+&__item-img-wrapper{
+	aspect-ratio: 9/16;
+	position: relative;
+	overflow: hidden;
+	transition: all ease .3s;
+}
+&__item-img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+&__img-titles-container {
+	position: absolute;
+
+	margin: 0 auto;
+	inset: 3rem 0 0 0;
+}
+
+&__img-titles-wrapper {
+	overflow: hidden;
+	& > * {
+		display: block;
+	transform: translateY(100%);
+	transition: all ease 0.3s;
+
+
+	}
+}
+
+&__item-img-title{
+	z-index: 2;
+	font-size: var(--fs-900);
+}
+&__item-img-subtitle{
+	z-index: 2;
+	font-size: var(--fs-800);
+}
+}
