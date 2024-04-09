@@ -1,10 +1,14 @@
 @use '../abstracts' as *;
 
+// * {
+// 	border: green solid 1px;
+// }
+
 .projects-hover {
 	$self: &;
 	--animation-motion: cubic-bezier(0.76, -0.01, 0.34, 0.45);
-	--animation-time: 0.4s;
-	--animation-time--fast: 0.4s;
+	--animation-time: 0.5s;
+	--animation-time--fast: 0.5s;
 	color: #000;
 	display: grid;
 	// gap: 1rem;
@@ -14,11 +18,8 @@
 		grid-template-columns: repeat(4, 1fr);
 	}
 
-
-
 	&__item {
-		border: 2px #000 solid;
-
+		box-shadow: 1px 1px 1px 1px #000;
 		display: grid;
 		justify-content: center;
 		text-align: center;
@@ -29,48 +30,12 @@
 		display: grid;
 		grid-template-rows: 1fr;
 
-		&:hover .one:not(:hover)  {
+		&:hover .projects-hover__item-hover-grid:not(:hover) {
 			height: 0%;
-
 		}
 
-		.one:hover  {
+		.projects-hover__item-hover-grid:hover {
 			height: 100%;
-		}
-
-		.one {
-			height: 50%;
-			// opacity: 0.5;
-		}
-
-		// start playground
-		 .one:first-of-type {
-			transition: all ease 1s;
-			// background-color: gold;
-			grid-row: 1/1;
-
-			position: absolute;
-			inset: 0;
-				z-index: 99;
-
-			width: 100%;
-		 }
-		 .one:last-of-type {
-			z-index: 99;
-			transition: all ease 1s;
-			// background: tomato;
-			grid-row: 1/1;
-			position: absolute;
-			inset: 0;
-			width: 100%;
-			 margin-top: auto;
-
-		 }
-		// end playground
-
-
-		&:hover {
-
 		}
 
 		&:hover .projects-hover__item-img-wrapper {
@@ -94,11 +59,13 @@
 			// height: 100%;
 		}
 
-		&:has(.one:first-of-type:hover):hover::before {
+		&:has(
+				.projects-hover__item-hover-grid:first-of-type:hover
+			):hover::before {
 			height: 100%;
 		}
 
-		&:has(.one:last-of-type:hover):hover::after {
+		&:has(.projects-hover__item-hover-grid:last-of-type:hover):hover::after {
 			height: 100%;
 		}
 
@@ -112,6 +79,7 @@
 			// background: red;
 			transition: all var(--animation-motion) var(--animation-time--fast);
 		}
+
 		&::after {
 			z-index: -1;
 			position: absolute;
@@ -123,12 +91,57 @@
 			// background: green;
 			transition: all var(--animation-motion) var(--animation-time--fast);
 		}
+
+		.projects-hover__item-hover-grid {
+			height: 50%;
+			// opacity: 0.5;
+		}
+
+		.projects-hover__item-hover-grid:first-of-type {
+			transition: all ease 1s;
+			// background-color: gold;
+			grid-row: 1/1;
+			position: absolute;
+			inset: 0;
+			z-index: 99;
+			width: 100%;
+		}
+
+		.projects-hover__item-hover-grid:last-of-type {
+			z-index: 99;
+			transition: all ease 1s;
+			// background: tomato;
+			grid-row: 1/1;
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			margin-top: auto;
+		}
+
+		// Different color options
+		&--color-1::after,
+		&--color-1::before {
+			background-color: pink;
+		}
+		&--color-2::after,
+		&--color-2::before {
+			background-color: steelblue;
+		}
+		&--color-3::after,
+		&--color-3::before {
+			background-color: teal;
+		}
+		&--color-4::after,
+		&--color-4::before {
+			background-color: navajowhite;
+		}
 	}
+
 	&__article {
 		grid-row: 1/2;
 		// opacity: 0.5;
 
-		padding: 2.5rem 4rem ;
+		padding: 2.5rem 4rem;
 	}
 
 	&__titles-wrapper {

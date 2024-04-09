@@ -12,7 +12,7 @@
 	transition: opacity 0.3s ease;
 	cursor: pointer;
 	padding: 1rem;
-	z-index: 99;
+	z-index: 9999;
 
 	&:hover {
 		opacity: 1;

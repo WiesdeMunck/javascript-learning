@@ -8,9 +8,9 @@ export default function ProjectsHover() {
 
 			<ul className='projects-hover'>
 				{[...Array(6)].map((_, i) => (
-					<li className="projects-hover__item">
-						<div className="one"></div>
-						<div className="one"></div>
+					<li className={`projects-hover__item projects-hover__item--color-${i}`}>
+						<div className="projects-hover__item-hover-grid"></div>
+						<div className="projects-hover__item-hover-grid"></div>
 						<article className="projects-hover__article">
 							<div className='projects-hover__titles-wrapper'>
 								<h2 className="article projects-hover__item-title">title me</h2>

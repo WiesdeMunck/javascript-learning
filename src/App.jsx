@@ -10,6 +10,7 @@ import SvgAnimation from './components/SvgAnimation/SvgAnimation';
 import SwiperAnimation from './components/SwiperAnimation/SwiperAnimation';
 import NumberOne from './components/NumberOne';
 import MovieCard from './components/MovieCard/MovieCard';
+import ProjectsHover from './components/ProjectsHover/ProjectsHover';
 
 
 
@@ -28,6 +29,8 @@ function App() {
 					<Route path="/svg-animation" element={<SvgAnimation />} />
 					<Route path="/swiper-animation" element={<SwiperAnimation/>} />
 					<Route path="/zero-point" element={<NumberOne />} />
+					<Route path="/meester-hover" element={<ProjectsHover />} />
+
 				</Routes>
 				<Analytics />
 				<SpeedInsights />

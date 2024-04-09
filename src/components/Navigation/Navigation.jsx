@@ -14,6 +14,10 @@ export default function Navigation() {
 			url: '/movie-card'
 		},
 		{
+			name: 'Meester Hover',
+			url: '/meester-hover'
+		},
+		{
 			name: 'Aos Animation',
 			url: '/aos-animation',
 		},
