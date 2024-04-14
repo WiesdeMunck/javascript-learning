@@ -6,6 +6,7 @@ import AosAnimation from "../components/AosAnimation/AosAnimation";
 import SvgAnimation from "../components/SvgAnimation/SvgAnimation";
 import MovieCard from "../components/MovieCard/MovieCard";
 import ProjectsHover from "../components/ProjectsHover/ProjectsHover";
+import MeesterCard from "../components/MeesterCard/MeesterCard";
 
 export default function HomePage() {
 	return (
@@ -14,7 +15,8 @@ export default function HomePage() {
 			{/* <SvgAnimation /> */}
 			{/* <AosAnimation /> */}
 			{/* <MovieCard	/> */}
-			<ProjectsHover />
+			{/* <ProjectsHover /> */}
+			<MeesterCard />
 			{/* <NumberOne />  */}
 		</div>
 	)

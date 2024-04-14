@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+// * {
+// 	border: green solid 1px;
+// }
+
+.meester-card {
+	position: relative;
+
+	border: solid 2px tomato;
+	;
+
+	&__item {
+		aspect-ratio: 1 / 1;
+		display: grid;
+		grid-template-rows: 50% 50%;
+	}
+
+	&__content__article {
+
+	}
+
+	&__content-wrapper {
+		padding: 44px 24px 24px 24px;
+	}
+
+	&__title {
+
+	}
+
+	&__subtitle {
+
+	}
+
+	&__tag-list {
+
+	}
+
+	&__tag {
+
+	}
+
+	&__img-wrapper {
+		height: 50%;
+	}
+
+	&__img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	&__btn {
+		position: absolute;
+		inset: auto 24px 24px 24px;
+
+		height: fit-content;
+
+
+	}
+
+}
