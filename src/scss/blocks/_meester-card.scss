@@ -8,7 +8,7 @@
 
 @keyframes slide-up {
 	0% {
-		transform: translateY(100%);
+		transform: translateY(150%);
 	}
 	100% {
 		transform: translateY(0);
@@ -24,21 +24,26 @@ html:has(.meester-card) {
 	--clr-primary--400: #ed6057;
 	position: relative;
 	color: var(--clr-primary--400);
-
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 2rem;
 
 	&__item {
-		border: solid 2px var(--clr-primary--400);
+		border: solid 3px var(--clr-primary--400);
 		aspect-ratio: 1 / 1;
 		position: relative;
+		list-style-type: none;
 
 		& #{ $self }__animation-wrapper > * {
-			animation: forwards 0.75s slide-up;
+			transform: translateY(150%);
+
+			animation: forwards 1.25s slide-up 0.5s;
 		}
 		 &:nth-child(n+3 ) #{ $self }__animation-wrapper > * {
-			animation: forwards 1.5s slide-up;
+			animation: forwards 1.25s slide-up 0.5s;
+
+			// This makes it come a bit later
+			animation-timing-function: cubic-bezier(0.76, -0.01, 0.34, 0.45);
 		}
 	}
 
@@ -52,13 +57,15 @@ html:has(.meester-card) {
 		padding: 44px 24px 24px 24px;
 		display: grid;
 		grid-template-rows: auto;
+		align-content: start;
 	}
 
 	&__animation-wrapper {
+		height: fit-content;
 		overflow: hidden;
 
 		& > * {
-			transform: translateY(100%);
+			transform: translateY(150%);
 		}
 	}
 
@@ -66,10 +73,12 @@ html:has(.meester-card) {
 		display: block;
 	}
 
-	&__subtitle {
+	&__animation-wrapper:has(.meester-card__subtitle) {
 		order: -1;
-		overflow: hidden;
+	}
 
+	&__subtitle {
+		overflow: hidden;
 		display: block;
 	}
 
@@ -85,6 +94,8 @@ html:has(.meester-card) {
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
+		grid-row: 2 / 2;
+    grid-column: 1 / 1;
 	}
 
 	&__img {
@@ -97,11 +108,22 @@ html:has(.meester-card) {
 	}
 
 	&__btn {
-		position: absolute;
-		inset: auto 24px 24px 24px;
 		background-color: var(--clr-primary--400);
 		color: var(--clr-neutral--900);
 		border: none;
 		height: fit-content;
+		cursor: pointer;
+		grid-row: 2 / 2;
+		grid-column: 1 / 1;
+		z-index: 1;
+		margin: auto 24px 24px 24px ;
+
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+
+		}
 	}
 }
