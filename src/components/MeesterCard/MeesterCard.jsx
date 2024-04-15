@@ -18,7 +18,7 @@ export default function MeesterCard() {
 										</date>
 									</div>
 									<ul className="meester-card__tag-list meester-card__animation-wrapper meester-card__animation-wrapper-text">
-										<li className="meester-card__tag">tag me</li>
+										<li className="meester-card__tag">Tag me</li>
 									</ul>
 								</div>
 
@@ -29,7 +29,11 @@ export default function MeesterCard() {
 										alt="kitten me"
 									/>
 								</figure>
-								<button className="meester-card__btn">button me</button>
+								{/* div.meester-card__animation-wrapper */}
+								<button className="meester-card__btn">Button me</button>
+								<div className='meester-card__title-hover-wrapper' >
+								<span className='meester-card__title-hover' > Title me </span>
+								</div>
 							</article>
 						</li>
 					);

@@ -1,6 +1,5 @@
 @use '../abstracts' as *;
 
-// cubic-bezier(0.76, -0.01, 0.34, 0.45)
 
 @keyframes slide-up {
 	0% {
@@ -9,22 +8,28 @@
 	100% {
 		transform: translateY(0);
 	}
+
+
 }
 
 html:has(.meester-card) {
 	background-color: var(--clr-neutral--900);
+
+
 }
 
 .meester-card {
 	$self: &;
+	--animation-timing: cubic-bezier(0.76, -0.01, 0.34, 0.45);
 	--clr-primary--400: #ed6057;
 	position: relative;
 	color: var(--clr-primary--400);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
+	gap: 4rem;
 
 	&__item {
+		position: relative;
 		border: solid 3px var(--clr-primary--400);
 		aspect-ratio: 1 / 1;
 		position: relative;
@@ -39,7 +44,7 @@ html:has(.meester-card) {
 			animation: forwards 1.25s slide-up 0.5s;
 
 			// This makes it come a bit later
-			animation-timing-function: cubic-bezier(0.76, -0.01, 0.34, 0.45);
+			animation-timing-function: var(--animation-timing);
 		}
 
 		&:has(.meester-card__btn:hover) #{ $self }__img-wrapper {
@@ -47,10 +52,25 @@ html:has(.meester-card) {
 
 		}
 
-		&:has(.meester-card__btn) .meester-card__animation-wrapper-text > * {
+		&:has(.meester-card__btn:hover) .meester-card__animation-wrapper-text::after {
 			// important fucks it up make it so it wins in specifity without the !important
-			transform: translateY(-100%) ;
+			height: 100%;
+
 		}
+		&:has(.meester-card__btn:hover) .meester-card__title-hover{
+			// important fucks it up make it so it wins in specifity without the !important
+			transform: translateY(0%);
+
+		}
+
+		&:has(.meester-card__btn:hover) .meester-card__img-wrapper::after{
+			// important fucks it up make it so it wins in specifity without the !important
+			opacity: 0.3;
+			height: 100%;
+
+		}
+
+
 	}
 
 	.meester-card__article {
@@ -60,7 +80,7 @@ html:has(.meester-card) {
 	}
 
 	&__content-wrapper {
-		padding: 44px 24px 24px 24px;
+		padding: 16px 24px 24px 24px;
 		display: grid;
 		grid-template-rows: auto;
 		align-content: start;
@@ -74,12 +94,30 @@ html:has(.meester-card) {
 
 		& > * {
 			transform: translateY(0%);
-			transition:  transform cubic-bezier(0.76, -0.01, 0.34, 0.45) 0.5s;
+			transition:  transform var(--animation-timing) 0.5s;
+		}
+	}
+
+	&__animation-wrapper-text {
+		position: relative;
+
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 0%;
+			margin-top: auto;
+			transition: height ease .5s;
+			background: var(--clr-neutral--900);
 		}
 	}
 
 	&__title {
 		display: block;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
 	}
 
 	&__animation-wrapper:has(.meester-card__subtitle) {
@@ -89,17 +127,39 @@ html:has(.meester-card) {
 	&__subtitle {
 		overflow: hidden;
 		display: block;
+		font-size: var(--fs-50);
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+
+		&::before {
+			content: "";
+			width: 6px;
+			height: 6px;
+			border-radius: 9999px;
+			background-color: var(--clr-primary--400);
+			z-index: 99;
+			position: relative;
+			display: block;
+
+		}
 	}
 
 	&__tag-list {
+		font-size: var(--fs-10);
+		font-weight: 600;
+		width: fit-content;
+
 	}
 
 	&__tag {
 		display: block;
+		border: 1px solid var(--clr-primary--400);
+		padding: 0 4px;
 	}
 
 	&__img-wrapper {
-		transition:  height cubic-bezier(0.76, -0.01, 0.34, 0.45) 0.5s;
+		transition:  height var(--animation-timing) 0.5s;
 		aspect-ratio: 2/1;
 		width: 100%;
 		overflow: hidden;
@@ -107,6 +167,18 @@ html:has(.meester-card) {
 		grid-row: 1 / 3;
 		height: 50%;
 		margin-top: auto;
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			height: 50%;
+			width: 100%;
+			background: var(--clr-neutral--900);
+			opacity: 0;
+			margin-top: auto;
+			transition: opacity var(--animation-timing) 0.5s, height var(--animation-timing) 0.5s;
+		}
 
 	}
 
@@ -126,11 +198,39 @@ html:has(.meester-card) {
 		grid-column: 1 / 1;
 		z-index: 1;
 		margin: auto 24px 24px 24px;
+		padding: 8px;
+		border-radius: 4px;
+		font-size: var(--fs-30);
+		transition: all ease .5s;
+		font-weight: 600;
+
+		&:hover {
+			background-color: var(--clr-neutral--900);
+			color: var(--clr-primary--400);
+		}
 
 		&::after {
 			content: '';
 			position: absolute;
 			inset: 0;
 		}
+
+	}
+
+	&__title-hover-wrapper {
+
+		overflow: hidden;
+		position: absolute;
+		margin: 0 auto;
+		place-self: center;
+
+	}
+
+	&__title-hover {
+		transition: transform var(--animation-timing) 0.5s;
+		transform: translateY(100%);
+		display: block;
+		font-size: var(--fs-800);
+		color: var(--clr-neutral--100);
 	}
 }
