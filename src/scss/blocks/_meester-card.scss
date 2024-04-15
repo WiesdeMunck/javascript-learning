@@ -1,9 +1,5 @@
 @use '../abstracts' as *;
 
-* {
-transition:  all ease .5s;
-}
-
 // cubic-bezier(0.76, -0.01, 0.34, 0.45)
 
 @keyframes slide-up {
@@ -51,9 +47,9 @@ html:has(.meester-card) {
 
 		}
 
-		&:has(.meester-card__btn:hover) .meester-card__animation-wrapper > * {
+		&:has(.meester-card__btn) .meester-card__animation-wrapper-text > * {
 			// important fucks it up make it so it wins in specifity without the !important
-			transform: translateY(-100%) !important;
+			transform: translateY(-100%) ;
 		}
 	}
 
@@ -78,7 +74,7 @@ html:has(.meester-card) {
 
 		& > * {
 			transform: translateY(0%);
-			transition:  all cubic-bezier(0.76, -0.01, 0.34, 0.45) 0.5s;
+			transition:  transform cubic-bezier(0.76, -0.01, 0.34, 0.45) 0.5s;
 		}
 	}
 
@@ -103,7 +99,7 @@ html:has(.meester-card) {
 	}
 
 	&__img-wrapper {
-		transition:  all cubic-bezier(0.76, -0.01, 0.34, 0.45) 0.5s;
+		transition:  height cubic-bezier(0.76, -0.01, 0.34, 0.45) 0.5s;
 		aspect-ratio: 2/1;
 		width: 100%;
 		overflow: hidden;
