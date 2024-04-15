@@ -9,15 +9,15 @@ export default function MeesterCard() {
 						<li className="meester-card__item">
 							<article className="meester-card__article">
 								<div className="meester-card__content-wrapper">
-									<div className="meester-card__animation-wrapper">
+									<div className="meester-card__animation-wrapper meester-card__animation-wrapper-text">
 										<h3 className="meester-card__title">Title me</h3>
 									</div>
-									<div className="meester-card__animation-wrapper">
+									<div className="meester-card__animation-wrapper meester-card__animation-wrapper-text">
 										<date className="meester-card__subtitle">
 											Subtitle me
 										</date>
 									</div>
-									<ul className="meester-card__tag-list meester-card__animation-wrapper">
+									<ul className="meester-card__tag-list meester-card__animation-wrapper meester-card__animation-wrapper-text">
 										<li className="meester-card__tag">tag me</li>
 									</ul>
 								</div>
