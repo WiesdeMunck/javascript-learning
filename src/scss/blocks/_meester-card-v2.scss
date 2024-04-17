@@ -1,39 +1,49 @@
 @use '../abstracts' as *;
 
 
-@keyframes slide-up {
-	0% {
-		transform: translateY(150%);
-	}
-	100% {
-		transform: translateY(0);
-	}
 
 
-}
-
-html:has(.meester-card) {
+html:has(.meester-card-v2) {
 	background-color: var(--clr-neutral--900);
-
-
 }
 
-.meester-card {
+.meester-card-v2 {
 	$self: &;
 	--animation-timing: cubic-bezier(0.76, -0.01, 0.34, 0.45);
 	--clr-primary--400: #ed6057;
 	position: relative;
 	color: var(--clr-primary--400);
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 4rem;
+	grid-template-columns: 50% 50%;
+	position: relative;
+
+
+
 
 	&__item {
-		position: relative;
-		border: solid 3px var(--clr-primary--400);
+		transition: background-color ease .5s;
+
+		// position: absolute;
+		// inset: 0;
+
+		padding: 1rem;
 		aspect-ratio: 1 / 1;
 		position: relative;
 		list-style-type: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: transparent;
+			z-index: -1;
+
+
+		}
+
+		&:has(.meester-card-v2__btn:hover) {
+			background: var(--clr-primary--400);
+		}
 
 		& #{ $self }__animation-wrapper > * {
 			transform: translateY(150%);
@@ -47,23 +57,23 @@ html:has(.meester-card) {
 			animation-timing-function: var(--animation-timing);
 		}
 
-		&:has(.meester-card__btn:hover) #{ $self }__img-wrapper {
+		&:has(.meester-card-v2__btn:hover) #{ $self }__img-wrapper {
 			height: 100%;
 
 		}
 
-		&:has(.meester-card__btn:hover) .meester-card__animation-wrapper-text::after {
+		&:has(.meester-card-v2__btn:hover) .meester-card-v2__animation-wrapper-text {
 			// important fucks it up make it so it wins in specifity without the !important
-			height: 100%;
+			opacity: 0;
 
 		}
-		&:has(.meester-card__btn:hover) .meester-card__title-hover{
+		&:has(.meester-card-v2__btn:hover) .meester-card-v2__title-hover{
 			// important fucks it up make it so it wins in specifity without the !important
 			transform: translateY(0%);
 
 		}
 
-		&:has(.meester-card__btn:hover) .meester-card__img-wrapper::after{
+		&:has(.meester-card-v2__btn:hover) .meester-card-v2__img-wrapper::after{
 			// important fucks it up make it so it wins in specifity without the !important
 			opacity: 0.3;
 			height: 100%;
@@ -73,10 +83,13 @@ html:has(.meester-card) {
 
 	}
 
-	.meester-card__article {
+	.meester-card-v2__article {
 		display: grid;
 		grid-template-rows: 50% 50%;
 		height: 100%;
+		border: solid 3px var(--clr-primary--400);
+		margin:3rem 2rem ;
+		overflow: hidden;
 	}
 
 	&__content-wrapper {
@@ -100,6 +113,8 @@ html:has(.meester-card) {
 
 	&__animation-wrapper-text {
 		position: relative;
+		opacity: 1;
+		transition: ease .3s;
 
 
 		&::after {
@@ -108,6 +123,7 @@ html:has(.meester-card) {
 			inset: 0;
 			width: 100%;
 			height: 0%;
+
 			margin-top: auto;
 			transition: height ease .5s;
 			background: var(--clr-neutral--900);
@@ -120,7 +136,7 @@ html:has(.meester-card) {
 		margin-bottom: 0.25rem;
 	}
 
-	&__animation-wrapper:has(.meester-card__subtitle) {
+	&__animation-wrapper:has(.meester-card-v2__subtitle) {
 		order: -1;
 	}
 
@@ -160,19 +176,19 @@ html:has(.meester-card) {
 
 	&__img-wrapper {
 		transition:  height var(--animation-timing) 0.5s;
-		aspect-ratio: 2/1;
 		width: 100%;
 		overflow: hidden;
 		grid-column: 1 / 1;
 		grid-row: 1 / 3;
 		height: 50%;
 		margin-top: auto;
+		position: relative;
 
 		&::after {
 			content: "";
 			position: absolute;
 			inset: 0;
-			height: 50%;
+			height: 100%;
 			width: 100%;
 			background: var(--clr-neutral--900);
 			opacity: 0;
@@ -198,15 +214,14 @@ html:has(.meester-card) {
 		grid-column: 1 / 1;
 		z-index: 1;
 		margin: auto 24px 24px 24px;
-		padding: 8px;
-		border-radius: 4px;
+		padding: 20px 16px;
 		font-size: var(--fs-30);
 		transition: all ease .5s;
 		font-weight: 600;
 
 		&:hover {
-			background-color: var(--clr-neutral--900);
-			color: var(--clr-primary--400);
+			background-color: var(--clr-neutral--100);
+			color: var(--clr-neutral--900);
 		}
 
 		&::after {
@@ -232,5 +247,16 @@ html:has(.meester-card) {
 		display: block;
 		font-size: var(--fs-800);
 		color: var(--clr-neutral--100);
+	}
+
+	@keyframes slide-up {
+		0% {
+			transform: translateY(150%);
+		}
+		100% {
+			transform: translateY(0);
+		}
+
+
 	}
 }
