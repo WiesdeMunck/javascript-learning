@@ -11,6 +11,8 @@ import SwiperAnimation from './components/SwiperAnimation/SwiperAnimation';
 import NumberOne from './components/NumberOne';
 import MovieCard from './components/MovieCard/MovieCard';
 import ProjectsHover from './components/ProjectsHover/ProjectsHover';
+import MeesterCard from './components/MeesterCard/MeesterCard';
+
 
 
 
