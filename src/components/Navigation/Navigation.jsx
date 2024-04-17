@@ -18,6 +18,10 @@ export default function Navigation() {
 			url: '/meester-hover'
 		},
 		{
+			name: 'Meester Card',
+			url: '/meester-card'
+		},
+		{
 			name: 'Aos Animation',
 			url: '/aos-animation',
 		},

@@ -22,6 +22,7 @@ function App() {
 		<Router>
 		<Navigation />
 				<Routes>
+					<Route path="/meester-card" element={<MeesterCard />} />
 					<Route path="/" element={<HomePage />} />
 					<Route path="/movie-card" element={<MovieCard />} />
 					<Route path="/gsap-animation" element={<GsapAnimation />} />
@@ -30,7 +31,6 @@ function App() {
 					<Route path="/swiper-animation" element={<SwiperAnimation/>} />
 					<Route path="/zero-point" element={<NumberOne />} />
 					<Route path="/meester-hover" element={<ProjectsHover />} />
-
 				</Routes>
 				<Analytics />
 				<SpeedInsights />
