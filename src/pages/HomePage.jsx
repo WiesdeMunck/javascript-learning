@@ -8,6 +8,7 @@ import MovieCard from "../components/MovieCard/MovieCard";
 import ProjectsHover from "../components/ProjectsHover/ProjectsHover";
 import MeesterCard from "../components/MeesterCard/MeesterCard";
 import MeesterCardV2 from "../components/MeesterCard/MeesterCard-v2";
+import IframeSlideIn from "../components/IframeSlideIn/IframeSlideIn";
 
 export default function HomePage() {
 	return (
@@ -18,7 +19,8 @@ export default function HomePage() {
 			{/* <MovieCard	/> */}
 			{/* <ProjectsHover /> */}
 			{/* <MeesterCard /> */}
-			<MeesterCardV2 />
+			{/* <MeesterCardV2 /> */}
+			<IframeSlideIn />
 			{/* <NumberOne />  */}
 		</div>
 	)
