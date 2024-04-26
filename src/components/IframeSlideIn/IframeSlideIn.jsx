@@ -31,7 +31,7 @@ export default function IframeSlideIn() {
 					<button
 						className="iframe-slide-in__btn"
 						onClick={() => {
-							setIframeToggle('http://localhost:5173/meester-hover');
+							setIframeToggle('/meester-hover');
 							setIframeSlideToggle(() => !iframeSlideToggle);
 						}}
 					>
@@ -40,7 +40,7 @@ export default function IframeSlideIn() {
 					<button
 						className="iframe-slide-in__btn"
 						onClick={() => {
-							setIframeToggle('http://localhost:5173/movie-card');
+							setIframeToggle('/movie-card');
 							setIframeSlideToggle(() => !iframeSlideToggle);
 						}}
 					>
