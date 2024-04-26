@@ -13,8 +13,14 @@ export default function IframeSlideIn() {
 				<h1 className='iframe-slide-in__title'>IframeSlideIn</h1>
 
 				<ul className='iframe-slide-in__notes' >
+				<li className='iframe-slide-in__notes-item'>
+							<b>Its not perfect somtimes you need to click the button twice</b>
+					</li>
 					<li className='iframe-slide-in__notes-item'>
 							maybe add load animation on everyclick ?
+					</li>
+					<li className='iframe-slide-in__notes-item'>
+							the header/menu is also in the header mabye we need to make a specific page for this ?
 					</li>
 					<li className='iframe-slide-in__notes-item'>
 							Its really fast but wil it be the same on a lager site ?

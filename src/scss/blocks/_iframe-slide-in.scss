@@ -24,6 +24,10 @@
 	--clr-primary--400: #ed6057;
 	color: var(--clr-primary--400);
 
+	b {
+		font-weight: 700;
+	}
+
 	&__content-wrapper {
 		margin: 3rem 0;
 	}
@@ -33,11 +37,9 @@
 	}
 
 	&__notes {
-
 	}
 
 	&__notes-item {
-
 	}
 
 	&__button-wrapper {
