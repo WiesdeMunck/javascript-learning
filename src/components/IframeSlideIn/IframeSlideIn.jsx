@@ -31,7 +31,7 @@ export default function IframeSlideIn() {
 					<button
 						className="iframe-slide-in__btn"
 						onClick={() => {
-							setIframeToggle('/meester-hover');
+							setIframeToggle('https://placekitten.com/');
 							setIframeSlideToggle(() => !iframeSlideToggle);
 						}}
 					>
@@ -40,7 +40,7 @@ export default function IframeSlideIn() {
 					<button
 						className="iframe-slide-in__btn"
 						onClick={() => {
-							setIframeToggle('/movie-card');
+							setIframeToggle('https://placehold.co/');
 							setIframeSlideToggle(() => !iframeSlideToggle);
 						}}
 					>
