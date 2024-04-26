@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+
+// * {
+// 	border: green solid 1px;
+// }
+
+// cubic-bezier(0.76, -0.01, 0.34, 0.45)
+
+@keyframes slide-up {
+	0% {
+		transform: translateY(150%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+// html:has(.iframe-slide-in) {
+// 	background-color: var(--clr-neutral--900);
+// }
+
+.iframe-slide-in {
+	$self: &;
+	--clr-primary--400: #ed6057;
+	color: var(--clr-primary--400);
+
+	&__content-wrapper {
+		margin: 3rem 0;
+	}
+
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	&__notes {
+
+	}
+
+	&__notes-item {
+
+	}
+
+	&__button-wrapper {
+		display: grid;
+		gap: 2rem;
+	}
+
+	&__btn {
+		background-color: var(--clr-primary--400);
+		border: none;
+		width: fit-content;
+		padding: 1rem 2rem;
+		border-radius: 4px;
+	}
+	&__iframe-wrapper {
+		position: fixed;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border: green 1px solid;
+		width: 500px;
+		transform: translateX(100%);
+		transition: all ease 0.3s;
+	}
+
+	&__iframe-wrapper--slide-in {
+		transform: translateX(0%);
+	}
+
+	&__iframe-title {
+	}
+	&__iframe {
+		display: block;
+		border: tomato 1px solid;
+		width: 100%;
+		height: 100%;
+	}
+	&__iframe-btn {
+	}
+}
