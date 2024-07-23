@@ -12,6 +12,7 @@ import NumberOne from './components/NumberOne';
 import MovieCard from './components/MovieCard/MovieCard';
 import ProjectsHover from './components/ProjectsHover/ProjectsHover';
 import MeesterCard from './components/MeesterCard/MeesterCard';
+import IframeSlideIn from './components/IframeSlideIn/IframeSlideIn';
 
 
 
@@ -29,7 +30,8 @@ function App() {
 					<Route path="/movie-card" element={<MovieCard />} />
 					<Route path="/gsap-animation" element={<GsapAnimation />} />
 					<Route path="/aos-animation" element={<AosAnimation />} />
-					<Route path="/svg-animation" element={<SvgAnimation />} />
+					<Route path="/aos-animation" element={<AosAnimation />} />
+					<Route path="/iframe-slide-in" element={<IframeSlideIn />} />
 					<Route path="/swiper-animation" element={<SwiperAnimation/>} />
 					<Route path="/zero-point" element={<NumberOne />} />
 					<Route path="/meester-hover" element={<ProjectsHover />} />

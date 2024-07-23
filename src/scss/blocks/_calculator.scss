@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.calculator {
+	background: red;
+	width: 100%;
+	max-width: 500px;
+
+	&__screen {
+		background: #fefefe;
+		min-height: 200px;
+		display: grid;
+		padding: 1rem;
+	}
+	&__screen-text {
+		margin-left: auto;
+		margin-top: auto;
+	}
+	&__buttons {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1px;
+	}
+	&__buttons-col1 {
+		grid-column: span 3;
+		display: grid;
+		gap: 1px;
+	}
+	&__buttons-row-dark {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1px;
+	}
+	&__btn-dark {
+		background: 666;
+		color: #fff;
+	}
+	&__buttons-row-light {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1px;
+	}
+	&__btn-light {
+	}
+	&__buttons-col2 {
+		display: grid;
+		gap: 1px;
+	}
+}

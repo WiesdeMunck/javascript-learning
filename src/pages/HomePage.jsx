@@ -9,6 +9,7 @@ import ProjectsHover from "../components/ProjectsHover/ProjectsHover";
 import MeesterCard from "../components/MeesterCard/MeesterCard";
 import MeesterCardV2 from "../components/MeesterCard/MeesterCard-v2";
 import IframeSlideIn from "../components/IframeSlideIn/IframeSlideIn";
+import Calculator from "../components/Calculator/Calculator";
 
 export default function HomePage() {
 	return (
@@ -20,7 +21,8 @@ export default function HomePage() {
 			{/* <ProjectsHover /> */}
 			{/* <MeesterCard /> */}
 			{/* <MeesterCardV2 /> */}
-			<IframeSlideIn />
+			{/* <IframeSlideIn /> */}
+			<Calculator />
 			{/* <NumberOne />  */}
 		</div>
 	)

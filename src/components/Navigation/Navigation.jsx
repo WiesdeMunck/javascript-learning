@@ -10,6 +10,10 @@ export default function Navigation() {
 			url: '/',
 		},
 		{
+			name: 'Iframe Slide In',
+			url: '/iframe-slide-in',
+		},
+		{
 			name: 'Movie Card',
 			url: '/movie-card'
 		},
